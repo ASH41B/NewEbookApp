@@ -1,0 +1,26 @@
+.bg-custom{
+	background-color:white;
+	color:blue;
+}
+
+.navbar .nav-item:hover .nav-link:hover {
+	background:lightblue;
+	color:black;
+	border-radius: 20px;
+	
+}
+
+.nav-item:hover {
+	background: lightblue;
+	border-radius: 20px;
+	border: darkblue;
+}
+
+        
+.icon {
+    width: 48px;
+    height: 48px;
+  }
+
+.card-link{color: #19543E}
+
