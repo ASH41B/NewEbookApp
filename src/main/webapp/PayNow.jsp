@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.entity.Book_details" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -5,8 +7,6 @@
 <meta charset="UTF-8">
 <title>Payment Options</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
 
@@ -17,7 +17,29 @@
     <h2 class="text-center">Choose Your Payment Method</h2>
     <hr>
 
-    <!-- Credit/Debit Card Payment -->
+    <div class="card p-4 mb-3">
+        <h4>Final Price Details</h4>
+        <%
+            List<Book_details> cartList = (List<Book_details>) session.getAttribute("cart");
+            double totalBookPrice = 0;
+
+            if (cartList != null) {
+                for (Book_details book : cartList) {
+                    totalBookPrice += book.getBookprice();
+                }
+            }
+            double tax = totalBookPrice * 0.10;
+            double deliveryCharges = totalBookPrice * 0.05;
+            double finalPrice = totalBookPrice + tax + deliveryCharges;
+        %>
+        <p>Books Total Price: $<%= String.format("%.2f", totalBookPrice) %></p>
+        <p>Tax (10%): $<%= String.format("%.2f", tax) %></p>
+        <p>Delivery Charges (5%): $<%= String.format("%.2f", deliveryCharges) %></p>
+        <hr>
+        <h4>Final Amount: $<%= String.format("%.2f", finalPrice) %></h4>
+    </div>
+    
+        <!-- Credit/Debit Card Payment -->
     <div class="card p-4 mb-3">
         <h4><i class="bi bi-credit-card"></i> Pay via Credit/Debit Card</h4>
         <form action="#" method="post">
@@ -71,8 +93,11 @@
             </div>
         </form>
     </div>
+   
+
 </div>
 
 <%@ include file="ourPartners.jsp" %>
 </body>
 </html>
+

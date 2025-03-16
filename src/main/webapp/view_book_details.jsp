@@ -60,6 +60,7 @@
                         <div class="col">
                             <a href="buyNow.jsp?bid=<%= b.getBookid() %>" class="btn btn-success">Buy Now</a>
                             <a href="" class="btn btn-success">$<%= b.getBookprice() %></a>
+                            <a href="AddToCartServlet?bid=<%= b.getBookid() %>" class="btn btn-primary">Add to Cart</a>
                         </div>
                     </div>
                 </center>

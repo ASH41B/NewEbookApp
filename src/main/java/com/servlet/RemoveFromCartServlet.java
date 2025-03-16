@@ -1,24 +1,27 @@
 package com.servlet;
 
-import javax.servlet.ServletException;
+import java.io.*;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.io.IOException;
+import javax.servlet.http.*;
+import com.entity.Book_details;
 import java.util.List;
-import com.entity.Cart;
 
 @WebServlet("/RemoveFromCartServlet")
 public class RemoveFromCartServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int bookId = Integer.parseInt(request.getParameter("bookId"));
-        HttpSession session = request.getSession();
+    private static final long serialVersionUID = 1L;
 
-        List<Cart> cartList = (List<Cart>) session.getAttribute("cart");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        int bookId = Integer.parseInt(request.getParameter("bid"));
+
+        HttpSession session = request.getSession();
+        List<Book_details> cartList = (List<Book_details>) session.getAttribute("cart");
+
         if (cartList != null) {
-            cartList.removeIf(item -> item.getBid() == bookId);
+            cartList.removeIf(book -> book.getBookid() == bookId);
+            session.setAttribute("cart", cartList);
         }
 
         response.sendRedirect("cart.jsp");

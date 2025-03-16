@@ -1,77 +1,69 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.entity.Cart" %>
-<%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import="com.entity.Book_details" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Shopping Cart</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Your Cart</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <%@ include file="navbar2.jsp" %>
-    <%@ include file="navbar.jsp" %>
-    <br><br>
 
-    <h2>Your Cart</h2>
+<%@ include file="navbar2.jsp" %>
+<%@ include file="navbar.jsp" %>
+
+<div class="container mt-5">
+    <h2 class="text-center">Your Cart</h2>
+    <hr>
 
     <%
         HttpSession sessionObj = request.getSession();
-        List<Cart> cartList = (List<Cart>) sessionObj.getAttribute("cart");
+        List<Book_details> cartList = (List<Book_details>) sessionObj.getAttribute("cart");
 
         if (cartList == null || cartList.isEmpty()) {
-    %>
-        <h3>Your cart is empty!</h3>
-        <a href="index.jsp">Continue Shopping</a>
+    %>   
+        <h3 class="text-center">Your cart is empty!</h3>
+        <div class="text-center">
+            <a href="featured.jsp" class="btn btn-primary">Continue Shopping</a>
+        </div>
     <%
         } else {
     %>
-        <table border="1">
+    
+    <table class="table table-bordered">
+        <thead>
             <tr>
-                <th>Customer ID</th>
-                <th>Book Id</th>
-                <th>User Id</th>
                 <th>Book Name</th>
                 <th>Author</th>
                 <th>Price</th>
-                <th>Quantity</th>
-                <th>Total Price</th>
-                <th>Action</th>
+                <th>Remove</th>
             </tr>
-            <%
-                double grandTotal = 0;
-                for (Cart item : cartList) {
-                    double total = item.getPrice() * item.getQuantity();
-                    grandTotal += total;
-            %>
+        </thead>
+        <tbody>
+        <% for (Book_details book : cartList) { %>
             <tr>
-                <td><%= item.getCid() %></td>
-                <td><%= item.getBid() %></td>
-                <td><%= item.getUid() %></td>
-                <td><%= item.getBookName() %></td>
-                <td><%= item.getAuthor() %></td>
-                
-                <td><%= item.getQuantity() %></td>
-                <td>$<%= item.getPrice() %></td>
-                
-                  
-                <td>$<%= total %></td>
-                <td><a href="removeFromCart.jsp?id=<%= item.getBid()%>">Remove</a></td>
+                <td><%= book.getBookname() %></td>
+                <td><%= book.getBookauth() %></td>
+                <td>$<%= book.getBookprice() %></td>
+                <td>
+                    <a href="RemoveFromCartServlet?bid=<%= book.getBookid() %>" class="btn btn-danger btn-sm">
+                        Remove
+                    </a>
+                </td>
             </tr>
-            <% } %>
-            <tr>
-                <td colspan="7"><strong>Grand Total:</strong></td>
-                <td colspan="2"><strong>$<%= grandTotal %></strong></td>
-            </tr>
-        </table>
-        <br>
-        <a href="checkout.jsp">Proceed to Checkout</a>
-        <br>
-        <a href="index.jsp">Continue Shopping</a>
-    <% } %>
+        <% } %>
+        </tbody>
+    </table>
 
-    <%@ include file="ourPartners.jsp" %>
+    <div class="text-center">
+        <a href="PayNow.jsp" class="btn btn-success">Proceed to Checkout</a>
+    </div>
+
+    <% } %>
+</div>
+
+<%@ include file="ourPartners.jsp" %>
 </body>
 </html>
