@@ -3,6 +3,7 @@
 <%@ page import="com.entity.Book_details" %>
 <%@ page import="java.util.List" %>
 
+<%@ page import="com.entity.User" %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -23,6 +24,8 @@
 <title>All Fantasy and Fiction books</title>
 </head>
 <body>
+<%
+User u = (User) session.getAttribute("userobj");%>
 
     <%@ include file="navbar2.jsp" %>
     <%@ include file="navbar.jsp" %><br><br>
@@ -49,9 +52,19 @@ BooksDAOimpl dao = new BooksDAOimpl(DBConnect.getConn());
                     <p> <strong>Price:</strong> $<%= book.getBookprice() %> </p>
 
                     <div class="row">
-                        <a href="addCart.jsp?id=<%= book.getBookid() %>" class="btn btn-danger">Add to Cart</a>
-                        <a href="viewDetails.jsp?id=<%= book.getBookid() %>" class="btn btn-success">View Details</a>
-                    </div>
+                         <% if (u != null) { %>
+    <a href="cart?bid=<%= book.getBookid() %>&&uid=<%= u.getId() %>" class="btn btn-danger">Add to Cart</a>
+<% } else { %>
+    <a href="Login.jsp" class="btn btn-danger">Add to Cart</a>
+<% } %>
+
+
+<% if (book != null && book.getBookid() != 0) { %>
+    <a href="view_book_details.jsp?bid=<%= book.getBookid() %>" class="btn btn-success">View Details</a>
+<% } else { %>
+    <a href="error.jsp" class="btn btn-warning">View Details</a>
+<% } %>
+  </div>
                 </div>
             </div>
         </div>
@@ -60,16 +73,6 @@ BooksDAOimpl dao = new BooksDAOimpl(DBConnect.getConn());
     </div>
     
 </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     

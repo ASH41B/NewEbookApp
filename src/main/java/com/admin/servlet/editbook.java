@@ -51,9 +51,7 @@ public class editbook extends HttpServlet {
             b.setBookname(bookName);
             b.setBookauth(bookAu);
             b.setBookprice(bprice);
-//            b.setBkphotoName(bookph);
-            
-
+         
             req.setAttribute("book", b); 
             req.getRequestDispatcher("cardstructure.jsp").forward(req, resp);
 

@@ -43,7 +43,7 @@
     <div class="col"><div class="card" style="width: 18rem;">
   <div class="card-body border-3">
     <h5 class="card-title"><i class="fa-solid fa-cart-shopping fa-3x"></i></h5>
-    <a href="orders.jsp" class="btn btn-success">Order</a>
+    <a href="cart.jsp" class="btn btn-success">Order</a>
   </div>
 </div></div>
     

@@ -17,10 +17,8 @@ public class DBConnect {
     	        System.err.println("Database Driver Class Not Found: " + e.getMessage());
     	    } catch (SQLException e) {
     	        System.err.println("SQL Exception: " + e.getMessage());
-    	        System.out.println("Donee!");
     	    }
     	    return con; // Returns null if connection fails
-    	   
     	}
 
     }

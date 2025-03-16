@@ -3,6 +3,7 @@ package com.DAO;
 import java.util.List;
 
 import com.entity.Book_details;
+import com.entity.Cart;
 
 public interface BooksDAO {
 
@@ -57,5 +58,7 @@ public interface BooksDAO {
 	
 
 	public List<Book_details>displayNewOtherBook();
+
+	boolean add_Cart(Cart c);
 	
 }

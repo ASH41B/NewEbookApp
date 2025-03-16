@@ -12,6 +12,7 @@ import java.util.List;
 
 import com.DB.DBConnect.DBConnect;
 import com.entity.Book_details;
+import com.entity.Cart;
 import com.mysql.cj.PreparedQuery;
 
 public class BooksDAOimpl implements BooksDAO {
@@ -69,6 +70,51 @@ public class BooksDAOimpl implements BooksDAO {
         }
         return isAdded;
     }
+    
+    @Override
+    public boolean add_Cart(Cart c) {
+        boolean isAdded = false;
+        PreparedStatement ps = null;
+
+        try {
+            // SQL query to insert cart details
+            String query = "INSERT INTO `ebook-app`.cart (book_id, user_id, price, total_price, quantity) VALUES (?, ?, ?, ?, ?)";
+
+            // Prepare the statement and set parameters
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, c.getBid());       // Book ID
+            ps.setInt(2, c.getUid());       // User ID
+            ps.setDouble(3, c.getPrice());     // Price
+            ps.setDouble(4, c.getTotalprice()); // Total Price
+            ps.setDouble(5, c.getQuantity());     // Quantity
+
+            System.out.println("SQL Query: " + query);
+
+            // Execute the query
+            int rowsAffected = ps.executeUpdate(); 
+            if (rowsAffected > 0) {
+                isAdded = true;
+                System.out.println("Cart item added successfully!");
+            } else {
+                System.out.println("Insertion into cart failed.");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace(); // Replace with proper logging in production
+        } finally {
+            // Ensure the PreparedStatement is closed
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace(); // Replace with logging
+            }
+        }
+        return isAdded;
+    }
+
+
 
 	@Override
 	public List <Book_details> get_all_books() {
@@ -776,6 +822,7 @@ List<Book_details> list= new ArrayList<Book_details>();
 		return list;
 	}
 
+	
 	
 	
 	
