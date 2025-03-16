@@ -58,7 +58,7 @@
 
                     <div class="row text-center">
                         <div class="col">
-                            <a href="addCart.jsp?bid=<%= b.getBookid() %>" class="btn btn-primary">Add to Cart</a>
+                            <a href="buyNow.jsp?bid=<%= b.getBookid() %>" class="btn btn-success">Buy Now</a>
                             <a href="" class="btn btn-success">$<%= b.getBookprice() %></a>
                         </div>
                     </div>
