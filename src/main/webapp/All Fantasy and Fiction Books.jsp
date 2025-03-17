@@ -44,8 +44,8 @@ BooksDAOimpl dao = new BooksDAOimpl(DBConnect.getConn());
      <div class="col-md-3">
             <div class="card crd-ho">
                 <div class="card-body text-center">
-                    <img alt="Book Image" src="book images/<%= book.getBkphotoName() %>"
-                         style="width:150px; height:200px;" class="img-thumbnail">
+                <img alt="Book Image" src="<%= request.getContextPath() %>/book_images/<%= book.getBkphotoName() %>" 
+     style="width:300px; height:400px;" class="img-thumbnail">
                     <p> <strong>Title:</strong> <%= book.getBookname() %> </p>
                     <p> <strong>Author:</strong> <%= book.getBookauth() %> </p>
                     <p> <strong>Category:</strong> <%= book.getBkcategory() %> </p>

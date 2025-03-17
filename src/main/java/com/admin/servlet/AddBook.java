@@ -56,12 +56,16 @@ public class AddBook extends HttpServlet {
 
             // Handle success or failure
             HttpSession session = req.getSession();
-            if (isBookAdded) {
+            if (!isBookAdded) {
                 session.setAttribute("succmssg", "Book added successfully");
                 resp.sendRedirect("Success.jsp");
+           
             } else {
-                session.setAttribute("errormssg", "Failed to add the book");
+                session.setAttribute("errormssg", "Failed to add the book. Please try again.");
+                System.err.println("Book insertion failed. Possible DB issue or data error.");
                 resp.sendRedirect("error.jsp");
+            
+
             }
 
         } catch (Exception e) {

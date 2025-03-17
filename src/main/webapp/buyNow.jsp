@@ -48,8 +48,10 @@
         <!-- Left Side: Book Details -->
         <div class="col-md-6 p-4 border">
             <center>
-                <img src="<%= (b.getBkphotoName() != null) ? b.getBkphotoName() : "images/default.jpg" %>" 
-                     style="height: 200px; width: 200px;"><br>
+        <img src="book_images/<%= b.getBkphotoName() %>" 
+     alt="Book Image"
+     style="height: 200px; width: 200px;">
+
                 <h3>Book Name: <span class="text-success"><%= b.getBookname() %></span></h3>
                 <h4>Author Name: <span class="text-success"><%= b.getBookauth() %></span></h4>
                 <h4>Category: <span class="text-success"><%= b.getBkcategory() %></span></h4>

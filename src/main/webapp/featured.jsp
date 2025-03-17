@@ -69,7 +69,7 @@ if (conn == null) {
 
                     <div class="row">		
                     
-      <% if (u != null) { %>
+                      <% if (u != null) { %>
     <a href="buyNow.jsp?bid=<%= book.getBookid() %>" class="btn btn-danger">Buy Now</a>
 <% } else { %>
     <a href="Login.jsp" class="btn btn-danger">Buy Now</a>
@@ -77,11 +77,10 @@ if (conn == null) {
 
 
 <% if (book != null && book.getBookid() != 0) { %>
-    <a href="buyNow.jsp?bid=<%= book.getBookid() %>" class="btn btn-success">Buy Now</a>
+    <a href="view_book_details.jsp?bid=<%= book.getBookid() %>" class="btn btn-success">View Details</a>
 <% } else { %>
     <a href="error.jsp" class="btn btn-warning">View Details</a>
 <% } %>
-
                         
                     </div>
                 </div>
@@ -155,7 +154,7 @@ if (conn == null) {
                 %><div class="col-md-3">
             <div class="card crd-ho">
                 <div class="card-body text-center">
-                   <img alt="Book Image" src="<%= request.getContextPath() %>/book images/<%= book.getBkphotoName() %>" 
+                   <img alt="Book Image" src="<%= request.getContextPath() %>/book_images/<%= book.getBkphotoName() %>" 
      style="width:300px; height:400px;" class="img-thumbnail">
 
                     <p> <strong>Title:</strong> <%= book.getBookname() %> </p>
@@ -164,7 +163,7 @@ if (conn == null) {
                     <p> <strong>Price:</strong> $<%= book.getBookprice() %> </p>
 
                     <div class="row">
-                     <% if (u != null) { %>
+                                     <% if (u != null) { %>
     <a href="buyNow.jsp?bid=<%= book.getBookid() %>" class="btn btn-danger">Buy Now</a>
 <% } else { %>
     <a href="Login.jsp" class="btn btn-danger">Buy Now</a>
@@ -199,7 +198,7 @@ if (conn == null) {
                 %><div class="col-md-3">
             <div class="card crd-ho">
                 <div class="card-body text-center">
-                   <img alt="Book Image" src="<%= request.getContextPath() %>/book images/<%= book.getBkphotoName() %>" 
+                   <img alt="Book Image" src="<%= request.getContextPath() %>/book_images/<%= book.getBkphotoName() %>" 
      style="width:300px; height:400px;" class="img-thumbnail">
 
                     <p> <strong>Title:</strong> <%= book.getBookname() %> </p>
@@ -233,7 +232,8 @@ if (conn == null) {
     
     </div>
 </div>
-<!-- Additional sections for Fantasy, Biographies etc. -->
+
+
 <h2 class="container text-center">Drama and Poetry...</h2>
 <div class="container text-center">
     <div class="row">
@@ -244,7 +244,7 @@ if (conn == null) {
                 %><div class="col-md-3">
             <div class="card crd-ho">
                 <div class="card-body text-center">
-                <img alt="Book Image" src="<%= request.getContextPath() %>/book images/<%= book.getBkphotoName() %>" 
+                <img alt="Book Image" src="<%= request.getContextPath() %>/book_images/<%= book.getBkphotoName() %>" 
      style="width:300px; height:400px;" class="img-thumbnail">
 
                     <p> <strong>Title:</strong> <%= book.getBookname() %> </p>
@@ -280,7 +280,6 @@ if (conn == null) {
 
 
 
-<!-- Additional sections for Fantasy, Biographies etc. -->
 <h2 class="container text-center">Horror...</h2>
 <div class="container text-center">
     <div class="row">
@@ -291,7 +290,7 @@ if (conn == null) {
                 %><div class="col-md-3">
             <div class="card crd-ho">
                 <div class="card-body text-center">
-                <img alt="Book Image" src="<%= request.getContextPath() %>/book images/<%= book.getBkphotoName() %>" 
+                <img alt="Book Image" src="<%= request.getContextPath() %>/book_images/<%= book.getBkphotoName() %>" 
      style="width:300px; height:400px;" class="img-thumbnail">
 
                     <p> <strong>Title:</strong> <%= book.getBookname() %> </p>
@@ -325,7 +324,7 @@ if (conn == null) {
     </div>
 </div>
 
-<!-- Additional sections for Fantasy, Biographies etc. -->
+
 <h2 class="container text-center">Other...</h2>
 <div class="container text-center">
     <div class="row">
