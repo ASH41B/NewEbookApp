@@ -53,7 +53,8 @@
                             if (book != null) {
                         %>
                         
-                            <img src="book images/<%= book.getBkphotoName() %>" class="card-img-top" alt="Book Image"><br>
+                     <%--     <img src="<%= request.getContextPath() %>/book images/<%= book.getBkphotoName() %>" class="card-img-top" alt="Book Image">--%>  
+
                             <p><strong>Book ID:</strong> <%= book.getBookid() %></p>
                             <p><strong>Title:</strong> <%= book.getBookname() %></p>
                             <p><strong>Author:</strong> <%= book.getBookauth() %></p>

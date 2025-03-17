@@ -16,15 +16,37 @@
   <%@ include file="navbar.jsp" %>
   <body>
   <center>
-    <h2>Login</h2>
     </center>
     <center>
     <form action="login" method="POST">
-        Email: <input type="text" name="email" required><br>
-        Password: <input type="password" name="password" required><br>
-        <input type="submit" value="Login">
-        <input type="reset" value="reset">
-        <a href="Registration.jsp">Create Account</a>
+        <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card shadow-lg rounded-3">
+                    <div class="card-body p-4">
+                        <h2 class="text-center text-success">Login Page</h2>
+                        <form action="login" method="POST">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" id="password" name="password" class="form-control" required>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success">Login</button>
+                                <button type="reset" class="btn btn-danger">Reset</button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-3">
+                            <a href="Registration.jsp" class="text-decoration-none text-success">Create Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </form>
     </center>
 </body>

@@ -3,6 +3,8 @@
 <%@ page import="com.entity.Book_details" %>
 <%@ page import="java.util.List" %>
 
+<%@ page import="com.entity.User" %>
+
 <%@page import="com.DAO.BooksDAOimpl"%>
 
 

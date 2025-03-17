@@ -6,7 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Payment Options</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" 
+          integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -14,7 +24,7 @@
 <%@ include file="navbar.jsp" %>
 
 <div class="container mt-5">
-    <h2 class="text-center">Choose Your Payment Method</h2>
+    <h2 class="text-center text-success">Choose Your Payment Method</h2>
     <hr>
 
     <div class="card p-4 mb-3">
@@ -41,7 +51,7 @@
     
         <!-- Credit/Debit Card Payment -->
     <div class="card p-4 mb-3">
-        <h4><i class="bi bi-credit-card"></i> Pay via Credit/Debit Card</h4>
+        <h4><i class="bi bi-credit-card "></i> Pay via Credit/Debit Card</h4>
         <form action="#" method="post">
             <div class="mb-3">
                 <label for="cardNumber" class="form-label">Card Number</label>
@@ -65,7 +75,7 @@
             </div>
 
             <div class="text-center">
-                <a href="paymentSuccess.jsp" class="btn btn-primary">Pay Now</a>
+                <a href="paymentSuccess.jsp" class="btn btn-success">Pay Now</a>
             </div>
         </form>
     </div>
@@ -75,7 +85,7 @@
         <h4><i class="bi bi-cash"></i> Cash on Delivery (COD)</h4>
         <p>The customer will be asked to pay the full amount at the time of delivery.</p>
         <div class="text-center">
-            <a href="paymentSuccess.jsp" class="btn btn-primary">Confirm COD Order</a>
+            <a href="paymentSuccess.jsp" class="btn btn-success">Confirm COD Order</a>
         </div>
     </div>
 
@@ -89,7 +99,7 @@
             </div>
 
             <div class="text-center">
-                <a href="paymentSuccess.jsp" class="btn btn-primary">Pay Using UPI</a>
+                <a href="paymentSuccess.jsp" class="btn btn-success">Pay Using UPI</a>
             </div>
         </form>
     </div>

@@ -63,7 +63,7 @@
             <p>Tax (10%): $<%= String.format("%.2f", tax) %></p>
             <p>Delivery Charges (5%): $<%= String.format("%.2f", deliveryCharges) %></p>
             <hr>
-            <h4>Total Amount: $<%= String.format("%.2f", finalPrice) %></h4>
+            <h4 class="text-danger">Total Amount: $<%= String.format("%.2f", finalPrice) %></h4>
 
             <!-- Address Section -->
             <form action="OrderServlet" method="post">
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="text-center">
-                	<a href="PayNow.jsp" class="btn btn-primary">Pay Now</a>
+                	<a href="PayNow.jsp" class="btn btn-success">Pay Now</a>
                 	
                 </div>
             </form>

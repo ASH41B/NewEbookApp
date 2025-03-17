@@ -21,50 +21,64 @@ and open the template in the editor.
   <%@ include file="navbar2.jsp" %>
    <%@ include file="navbar.jsp" %>
    <center>
-         <form action="register" method="POST">
-             <h1>Welcome to the Registration Page</h1>
-            <label for="name">Enter your name:</label>
-            <input type="text" id="name" name="fname" required>
-       
-            <br><br>
-            <!-- 
-            <label>Enter your gender:</label>
-             <input type="radio" id="female" name="gender" value="Female">
-        <label for="female">Female</label>
-        <input type="radio" id="male" name="gender" value="Male">
-        <label for="male">Male</label><br><br>
-             -->
-              <label for="email">Enter your email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="phone_num">Enter your phone num:</label>
-            <input type="number" id="phno" name="phno" required><br><br>
-            
-             <label for="password">Enter your password:</label>
-            <input type="password" id="password" name="mypass" required><br><br>
-            
-            <label for="landmark">Enter your landmark:</label>
-            <input type="text" id="landmark" name="mylandmark" required><br><br>
-            <label for="address">Enter your address</label>
-            <input type="text" id="address" name="myaddress" required>
-             <br><br>       
-            <label for="city">Enter your city</label>
-            <input type="text" id="city" name="mycity" required>
-             <br><br><label for="state">Enter your state:</label>
-            <input type="text" id="state" name="mystate" required>
-             <br><br>
-             
-             <label>Enter your role:</label>
-             <input type="radio" id="Admin" name="role" value="Admin">
-        <label for="admin">Admin</label>
-        <input type="radio" id="User" name="role" value="User">
-        <label for="user">User</label><br><br>
-             
-             
-            <input type="submit" value="Register">
-            <input type="reset" value="Reset">
-           
+       <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-body p-4">
+                        <h2 class="text-center text-success">Registration Page</h2>
+                        <form action="register" method="POST">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Enter your email:</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone_num" class="form-label">Enter your phone number:</label>
+                                <input type="number" id="phno" name="phno" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Enter your password:</label>
+                                <input type="password" id="password" name="mypass" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="landmark" class="form-label">Enter your landmark:</label>
+                                <input type="text" id="landmark" name="mylandmark" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Enter your address:</label>
+                                <input type="text" id="address" name="myaddress" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="city" class="form-label">Enter your city:</label>
+                                <input type="text" id="city" name="mycity" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="state" class="form-label">Enter your state:</label>
+                                <input type="text" id="state" name="mystate" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Enter your role:</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="Admin" name="role" value="Admin" class="form-check-input">
+                                    <label for="Admin" class="form-check-label">Admin</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="User" name="role" value="User" class="form-check-input">
+                                    <label for="User" class="form-check-label">User</label>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success">Register</button>
+                                <button type="reset" class="btn btn-danger">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         </form>
     
+ <%@ include file="ourPartners.jsp" %>
  </center>
 </body>
 </html>

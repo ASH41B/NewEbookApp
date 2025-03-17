@@ -25,11 +25,11 @@
    <center>
    <br><br><br><br><br><br><br>
   <h1 style=" color:white" >Explore Our Library</h1><br>
- 
-  <form class="col-6" role="search">
+   
+ <%-- <form class="col-6" role="search">
         <input class="form-control me-2 " style="border-width: 5px" ; type="search" placeholder="Search Title, Author or ISBN" aria-label="Search"><br>
         <button class="btn btn-outline-success" type="submit">Search</button><br><br><br><br><br><br><br>
-      </form>
+      </form   --%>
       </center>
       
   </div>
