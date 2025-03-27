@@ -41,8 +41,9 @@
         <div class="row">
             <div class="col-md-6 p-4 border">
                 <center>
-                    <img src="<%= (b.getBkphotoName() != null) ? b.getBkphotoName() : "images/default.jpg" %>" 
-                         style="height: 100px; width: 100px;"><br>
+                    <img src="book_images/<%= b.getBkphotoName() %>" 
+     alt="Book Image"
+     style="height: 200px; width: 200px;"><br>
                     <h3>Book Name: <span class="text-success"><%= b.getBookname() %></span></h3>
                     <h4>Author Name: <span class="text-success"><%= b.getBookauth() %></span></h4>
                     <h4>Category: <span class="text-success"><%= b.getBkcategory() %></span></h4>
@@ -58,7 +59,7 @@
 
                     <div class="row text-center">
                         <div class="col">
-                            <a href="buyNow.jsp?bid=<%= b.getBookid() %>" class="btn btn-success">Buy Now</a>
+                            <%-- <a href="buyNow.jsp?bid=<%= b.getBookid() %>" class="btn btn-success">Buy Now</a>--%> 
                             <a href="" class="btn btn-success">$<%= b.getBookprice() %></a>
                             <a href="AddToCartServlet?bid=<%= b.getBookid() %>" class="btn btn-primary">Add to Cart</a>
                         </div>

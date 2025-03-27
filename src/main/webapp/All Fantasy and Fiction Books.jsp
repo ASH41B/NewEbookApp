@@ -53,7 +53,7 @@ BooksDAOimpl dao = new BooksDAOimpl(DBConnect.getConn());
 
                     <div class="row">
                          <% if (u != null) { %>
-    <a href="cart?bid=<%= book.getBookid() %>&&uid=<%= u.getId() %>" class="btn btn-danger">Add to Cart</a>
+    <a href="AddToCartServlet?bid=<%= book.getBookid() %>&&uid=<%= u.getId() %>" class="btn btn-primary">Add to Cart</a>
 <% } else { %>
     <a href="Login.jsp" class="btn btn-danger">Add to Cart</a>
 <% } %>

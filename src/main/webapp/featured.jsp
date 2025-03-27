@@ -70,9 +70,9 @@ if (conn == null) {
                     <div class="row">		
                     
                       <% if (u != null) { %>
-    <a href="buyNow.jsp?bid=<%= book.getBookid() %>" class="btn btn-danger">Buy Now</a>
+     <a href="AddToCartServlet?bid=<%= book.getBookid() %>" class="btn btn-primary">Add to Cart</a>
 <% } else { %>
-    <a href="Login.jsp" class="btn btn-danger">Buy Now</a>
+    <a href="Login.jsp" class="btn btn-danger">Buy</a>
 <% } %>
 
 
@@ -118,9 +118,9 @@ if (conn == null) {
 
                     <div class="row">
                          <% if (u != null) { %>
-    <a href="buyNow.jsp?bid=<%= book.getBookid() %>" class="btn btn-danger">Buy Now</a>
+     <a href="AddToCartServlet?bid=<%= book.getBookid() %>" class="btn btn-primary">Add to Cart</a>
 <% } else { %>
-    <a href="Login.jsp" class="btn btn-danger">Buy Now</a>
+    <a href="Login.jsp" class="btn btn-danger">Buy</a>
 <% } %>
 
 
@@ -164,9 +164,9 @@ if (conn == null) {
 
                     <div class="row">
                                      <% if (u != null) { %>
-    <a href="buyNow.jsp?bid=<%= book.getBookid() %>" class="btn btn-danger">Buy Now</a>
+     <a href="AddToCartServlet?bid=<%= book.getBookid() %>" class="btn btn-primary">Add to Cart</a>
 <% } else { %>
-    <a href="Login.jsp" class="btn btn-danger">Buy Now</a>
+    <a href="Login.jsp" class="btn btn-danger">Buy</a>
 <% } %>
 
 
@@ -208,9 +208,9 @@ if (conn == null) {
 
                     <div class="row">
                     <% if (u != null) { %>
-    <a href="buyNow.jsp?bid=<%= book.getBookid() %>" class="btn btn-danger">Buy Now</a>
+     <a href="AddToCartServlet?bid=<%= book.getBookid() %>" class="btn btn-primary">Add to Cart</a>
 <% } else { %>
-    <a href="Login.jsp" class="btn btn-danger">Buy Now</a>
+    <a href="Login.jsp" class="btn btn-danger">Buy</a>
 <% } %>
 
 
@@ -254,9 +254,9 @@ if (conn == null) {
 
                     <div class="row">
                         <% if (u != null) { %>
-    <a href="buyNow.jsp?bid=<%= book.getBookid() %>" class="btn btn-danger">Buy Now</a>
+     <a href="AddToCartServlet?bid=<%= book.getBookid() %>" class="btn btn-primary">Add to Cart</a>
 <% } else { %>
-    <a href="Login.jsp" class="btn btn-danger">Buy Now</a>
+    <a href="Login.jsp" class="btn btn-danger">Buy</a>
 <% } %>
 
 
@@ -300,9 +300,9 @@ if (conn == null) {
 
                     <div class="row">
                       <% if (u != null) { %>
-   <a href="buyNow.jsp?bid=<%= book.getBookid() %>" class="btn btn-danger">Buy Now</a>
+    <a href="AddToCartServlet?bid=<%= book.getBookid() %>" class="btn btn-primary">Add to Cart</a>
 <% } else { %>
-    <a href="Login.jsp" class="btn btn-danger">Buy Now</a>
+    <a href="Login.jsp" class="btn btn-danger">Buy</a>
 <% } %>
 
 
@@ -330,9 +330,8 @@ if (conn == null) {
     <div class="row">
         <%
             List<Book_details> OBooks = dao.getNewOtherBook();
-		if (OBooks != null && !OBooks.isEmpty()) {
             for (Book_details book : OBooks) {
-            	// request.setAttribute("book", book);
+            	 request.setAttribute("book", book);
                 %><div class="col-md-3">
             <div class="card crd-ho">
                 <div class="card-body text-center">
@@ -345,22 +344,27 @@ if (conn == null) {
                     <p> <strong>Price:</strong> $<%= book.getBookprice() %> </p>
 
                     <div class="row">
-                    <a href="buyNow.jsp?bid=<%= book.getBookid() %>" class="btn btn-danger">Buy Now</a>
-                        <a href="view_book_details.jsp?bid=<%= book.getBookid() %>" class="btn btn-success">View Details</a>
-                    </div>
+                      <% if (u != null) { %>
+    <a href="AddToCartServlet?bid=<%= book.getBookid() %>" class="btn btn-primary">Add to Cart</a>
+<% } else { %>
+    <a href="Login.jsp" class="btn btn-danger">Buy</a>
+<% } %>
+
+
+<% if (book != null && book.getBookid() != 0) { %>
+    <a href="view_book_details.jsp?bid=<%= book.getBookid() %>" class="btn btn-success">View Details</a>
+<% } else { %>
+    <a href="error.jsp" class="btn btn-warning">View Details</a>
+<% } %>
+  </div>
                 </div>
             </div>
         </div>
-     <!--   <% } }else{ %> 
-        <p class="text-center">No books available at the moment.</p>
-              <%  }%>-->
+        <% } %> 
+                
     </div>
     <div class= "text-center mt-1">
-    <a href="All Other Books.jsp" class = "btn btn-danger">View All</a>
+    <a href="All Horror Books.jsp" class = "btn btn-danger">View All</a>
     
     </div>
 </div>
-
-
-</body>
-</html>

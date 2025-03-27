@@ -59,6 +59,7 @@
 
     <div class="text-center">
         <a href="PayNow.jsp" class="btn btn-success">Proceed to Checkout</a>
+         <a href="featured.jsp" class="btn btn-primary">Continue Shopping</a>
     </div>
 
     <% } %>

@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="text-center">
-                	<a href="PayNow.jsp" class="btn btn-success">Pay Now</a>
+                	<a href="cart.jsp" class="btn btn-success">Pay Now</a>
                 	
                 </div>
             </form>

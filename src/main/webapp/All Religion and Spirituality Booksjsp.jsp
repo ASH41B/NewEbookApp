@@ -63,7 +63,7 @@ User u = (User) session.getAttribute("userobj");%>
 
                     <div class="row">
                        <% if (u != null) { %>
-    <a href="cart?bid=<%= book.getBookid() %>&&uid=<%= u.getId() %>" class="btn btn-danger">Add to Cart</a>
+    <a href="AddToCartServlet?bid=<%= book.getBookid() %>&&uid=<%= u.getId() %>" class="btn btn-primary">Add to Cart</a>
 <% } else { %>
     <a href="Login.jsp" class="btn btn-danger">Add to Cart</a>
 <% } %>
@@ -82,20 +82,6 @@ User u = (User) session.getAttribute("userobj");%>
 
     </div>
 
-    <%
-    out.println("<h3>Debugging: RSBooks List</h3>");
-    if (RSBooks != null && !RSBooks.isEmpty()) {
-        for (Book_details book : RSBooks) {
-            out.println("<p>Book ID: " + book.getBookid() + 
-                        ", Title: " + book.getBookname() + 
-                        ", Author: " + book.getBookauth() + 
-                        ", Category: " + book.getBkcategory() + 
-                        ", Price: $" + book.getBookprice() + "</p>");
-        }
-    } else {
-        out.println("<p>No books found in Religion and Spirituality category.</p>");
-    }
-%>
     
    
   

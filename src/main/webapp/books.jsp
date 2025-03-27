@@ -58,7 +58,8 @@
                 <tr>
                     <td><%= b.getBookid() %></td>
                     <td>
-                        <img src="../book images/${b.bkphotoName}" style = "width:50px; height:50px;"> 
+                        <img src="book_images/<%= b.getBkphotoName() %>" 
+     alt="Book Image" style = "width:50px; height:50px;"> 
           <!-- style="width:50px; height:50px;" --> <alt="Book Image"></td>
                     <td><%= b.getBookname() %></td>
                     <td><%= b.getBookauth() %></td>
