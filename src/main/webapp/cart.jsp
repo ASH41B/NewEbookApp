@@ -26,7 +26,7 @@
     %>   
         <h3 class="text-center">Your cart is empty!</h3>
         <div class="text-center">
-            <a href="featured.jsp" class="btn btn-primary">Continue Shopping</a>
+            <a href="explore.jsp" class="btn btn-primary">Continue Shopping</a>
         </div>
     <%
         } else {

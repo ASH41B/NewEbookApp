@@ -7,8 +7,8 @@
 <title>Error Page</title>
 </head>
 <body style = "background-color:blue;">
-<h1 style = "background-color: red;">Book failed!</h1>
-<h2>"Try again"</h2>
+<h1 style = "background-color: red;">Operation failed!</h1>
+<h2>"Please try again"</h2>
 
 </body>
 </html>
